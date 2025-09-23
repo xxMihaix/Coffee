@@ -199,7 +199,7 @@ html, body{
     max-width: 900px;
 }
 
-.title{
+.title-prin{
     font-size: 40px;
     font-weight: bold;
 }
@@ -210,7 +210,7 @@ html, body{
 
 @media(max-width: 850px){
 
-    .title{
+    .title-prin{
     font-size: 32px;
     font-weight: bold;
 }
@@ -221,7 +221,7 @@ html, body{
 }
 
 @media(max-width: 850px){
-    .title{
+    .title-prin{
     font-size: 32px;
     font-weight: bold;
 }
@@ -253,7 +253,7 @@ html, body{
 }
 
 @media(max-width: 505px){
-    .title{
+    .title-prin{
         max-width: 310px;
         text-align: center;
     }
@@ -282,5 +282,286 @@ html, body{
 
 .soon2 a{
     color: rgb(149, 2, 149);
+    font-weight: bold;
+}
+
+/************  Online Store  ************/
+
+.rly-all-cont{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.magazin-online{
+    font-weight: bold;
+    font-size: 35px;
+    color: #795439;
+    margin-bottom: 30px;
+}
+
+.recenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.all-cont{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/************ Btn left/right  ***************/
+
+.princ{
+    max-width: 1159px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+@media(max-width: 1200px){
+    .princ{
+        max-width: 966px;
+    }
+}
+
+@media(max-width: 1020px){
+    .princ{
+        max-width: 779px;
+    }
+}
+
+@media(max-width: 830px){
+    .princ{
+        max-width: 588px;
+    }
+}
+
+@media(max-width: 620px){
+    .princ{
+        max-width: 397px;
+    }
+}
+
+.leftBtn{
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.rightBtn{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.rightBtn, .leftBtn{
+    width: 40px;
+    height: 40px;
+    background-color:#845a3c;
+    border: white 2px solid;
+    border-radius: 50px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/****** Continue ******/
+
+
+.principal-cont{
+    border-top: 3px solid #795439;
+    border-bottom: 3px solid #795439;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px 15px;
+}
+
+.principal-cont {
+  display: flex;            /* aranjează cardurile pe orizontală */
+  gap: 20px;                /* spațiu între carduri */
+  overflow-x: auto;         /* permite scroll orizontal */
+  scroll-behavior: smooth;  /* scroll lin */
+  padding: 10px 0;
+  list-style: none;         /* elimină bulinele */
+  -ms-overflow-style: none;  /* Internet Explorer și Edge */
+  scrollbar-width: none;     /* Firefox */
+  gap: 20px; 
+  padding: 15px 20px; 
+}
+
+.principal-cont::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+.card{
+    flex: 0 0 auto;
+    background-color: #926545;
+    height: 300px;
+    width: 170px;
+    border-radius: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.price{
+    font-size: 15px;
+    color: white;
+    margin-bottom: 7px;
+
+}
+
+.btn-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.buy-prod{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    padding: 0px 25px;
+    border: 1px solid white;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.see-prod{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    padding: 0px 25px;
+    border: 1px solid white;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+
+.type-categories{
+    font-weight: bold;
+    font-size: 25px;
+    color: #795439;
+    text-align: left;
+}
+
+@media(max-width: 430px){
+    .type-categories{
+        font-size: 20px;
+    }
+    
+    .princ{
+        max-width: 305px;
+    }
+
+    .title{
+        font-size: 15px;
+    }
+
+    .principal-cont{
+        gap: 15px;
+        padding: 15px 8px;
+    }
+
+    .card{
+        width: 135px;
+        height: 260px;
+    }
+
+    .product-img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .buy-prod, .see-prod{
+        font-size: 15px;
+        padding: 0px 15px;
+    }
+}
+
+@media(max-width: 390px){
+    .type-categories{
+        font-size: 20px;
+    }
+    
+    .princ{
+        max-width: 305px;
+    }
+
+    .title{
+        font-size: 15px;
+    }
+
+    .principal-cont{
+        gap: 15px;
+        padding: 15px 8px;
+    }
+
+    .card{
+        width: 135px;
+        height: 260px;
+    }
+
+    .product-img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .buy-prod, .see-prod{
+        font-size: 15px;
+        padding: 0px 15px;
+    }
+}
+
+/************ Footer *************/
+
+footer div{
+    width: 100%;
+    height: auto;
+    background-color:#6f4e37;
+    padding: 5px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+.devMihai{
+    color: rgb(141, 4, 141);
     font-weight: bold;
 }

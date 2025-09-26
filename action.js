@@ -1,3 +1,15 @@
+
+document.addEventListener('DOMContentLoaded', function () {
+  
+    document.getElementById('open-menu').addEventListener('click', function () {
+    
+        const menu = document.getElementById('mobile-menu');
+        console.log('toggle');
+        menu.classList.toggle('active');
+  });
+
+
+
 const products1 = [
   {title: 'Espresso', price: 9, image: 'images/CafeaClasicaImg/espressoSimple.png'},
   {title: 'Americano', price: 10, image: 'images/CafeaClasicaImg/americano.png'},
@@ -14,13 +26,26 @@ const products1 = [
 ];
 
 const products2 = [
-  {title: 'Ceai Jasmin', price: 2, image: 'images/CeaiImg/Ceai Jasmin.png'},
-  {title: 'Ceai Assam', price: 12, image: 'images/CeaiImg/americano.png'},
+  {title: 'Ceai Jasmin', price: 12, image: 'images/CeaiImg/Ceai Jasmin.png'},
+  {title: 'Ceai Assam', price: 12, image: 'images/CeaiImg/Ceai Assam.png'},
   {title: 'Ceai de Padure', price: 12, image: 'images/CeaiImg/Ceai de Padure.png'},
   {title: 'Ceai de Menta', price: 12, image: 'images/CeaiImg/Ceai de Menta.png'},
   {title: 'Rooibos', price: 12, image: 'images/CeaiImg/Rooibos.png'},
   {title: 'Infuzie Lamaie', price: 13, image: 'images/CeaiImg/Infuzie Lamaie.png'},
   {title: 'Ceai Rece Vara', price: 14, image: 'images/CeaiImg/Ceai Rece Vara.png'},
+];
+
+
+const products3 = [
+  {title: 'Matcha Latte', price: 16, image: 'images/BauturiFreshImg/Matcha Latte.png'},
+  {title: 'Chai Latte', price: 15, image: 'images/BauturiFreshImg/Chai Latte.png'},
+  {title: 'Golden Latte', price: 15, image: 'images/BauturiFreshImg/Golden Latte.png'},
+  {title: 'Ciocolată caldă', price: 14, image: 'images/BauturiFreshImg/Ciocolată caldă.png'},
+  {title: 'Limonadă', price: 13, image: 'images/BauturiFreshImg/Limonadă.png'},
+  {title: 'Fresh', price: 15, image: 'images/BauturiFreshImg/Fresh.png'},
+  {title: 'Smoothie', price: 16, image: 'images/BauturiFreshImg/Smoothie.png'},
+  {title: 'Apă plată', price: 7, image: 'images/BauturiFreshImg/Apă plată.png'},
+  {title: 'Sucuri naturale', price: 12, image: 'images/BauturiFreshImg/Sucuri naturale.png'},
 ];
 
 const section1 = document.getElementById('principal-cont-1');
@@ -55,79 +80,55 @@ products2.forEach(p => {
   section2.innerHTML += productHTML;
 });
 
-const container = document.getElementById('principal-cont-1');
-let scrollTargetX = container.scrollLeft;
+const section3 = document.getElementById('principal-cont-3');
+section3.innerHTML = '';
+products3.forEach(p => {
+  const productHTML = `
+    <li class="card">
+      <div class="img-cont"><img src="${p.image}" class="product-img"></div>
+      <p class="title">${p.title}</p>
+      <p class="price">${p.price} lei</p>
+      <div class="btn-cont">
+        <button class="buy-prod">Cumpără</button>
+        <button class="see-prod">Vezi Detalii</button>
+      </div>
+    </li>`;
+  section3.innerHTML += productHTML;
+});
 
-if(innerWidth < 430){
-  scrollStep = 150;
-}else{
-  scrollStep = 190;
-}
+// JavaScript
+const scrollStep = innerWidth < 430 ? 150 : 190;
 
-function clampScroll(value){
+// Funcție generică de clamp
+function clampScroll(container, value) {
   const maxScroll = container.scrollWidth - container.clientWidth;
   return Math.max(0, Math.min(value, maxScroll));
 }
 
-const leftBtn = document.getElementById('leftBtn');
-leftBtn.addEventListener('click', () => {
-  scrollTargetX -= scrollStep;
-  scrollTargetX = clampScroll(scrollTargetX);
-  container.scrollTo({ left: scrollTargetX, behavior: 'smooth' });
-});
-
-const rightBtn = document.getElementById('rightBtn');
-rightBtn.addEventListener('click', () => {
-  scrollTargetX += scrollStep;
-  scrollTargetX = clampScroll(scrollTargetX);
-  container.scrollTo({ left: scrollTargetX, behavior: 'smooth' });
-});
-/*
-
-/////////////////////////////////
-
-const container2 = document.getElementById('principal-cont-2');
-let scrollTargetX2 = container2.scrollLeft;
-
-
-const leftBtn2 = document.getElementById('leftBtn2');
-leftBtn.addEventListener('click', () => {
-  scrollTargetX2 -= scrollStep;
-  scrollTargetX2 = clampScroll(scrollTargetX2);
-  container2.scrollTo({ left: scrollTargetX2, behavior: 'smooth' });
-});
-
-const rightBtn2 = document.getElementById('rightBtn2');
-rightBtn.addEventListener('click', () => {
-  scrollTargetX2 += scrollStep;
-  scrollTargetX2 = clampScroll(scrollTargetX2);
-  container2.scrollTo({ left: scrollTargetX2, behavior: 'smooth' });
-});*//*
-
-function initCarousel(containerId, leftBtnId, rightBtnId) {
+// Funcție care atașează logica de scroll la un set de butoane
+function setupScroll(containerId, leftBtnId, rightBtnId) {
   const container = document.getElementById(containerId);
-  let scrollTargetX = container.scrollLeft;
-
-  let scrollStep = window.innerWidth < 430 ? 150 : 190;
-
-  function clampScroll(value) {
-    const maxScroll = container.scrollWidth - container.clientWidth;
-    return Math.max(0, Math.min(value, maxScroll));
-  }
-
   const leftBtn = document.getElementById(leftBtnId);
   const rightBtn = document.getElementById(rightBtnId);
 
-  leftBtn.addEventListener('click', () => {
+  let scrollTargetX = container.scrollLeft;
+
+  leftBtn.addEventListener("click", () => {
     scrollTargetX -= scrollStep;
-    scrollTargetX = clampScroll(scrollTargetX);
-    container.scrollTo({ left: scrollTargetX, behavior: 'smooth' });
+    scrollTargetX = clampScroll(container, scrollTargetX);
+    container.scrollTo({ left: scrollTargetX, behavior: "smooth" });
   });
 
-  rightBtn.addEventListener('click', () => {
+  rightBtn.addEventListener("click", () => {
     scrollTargetX += scrollStep;
-    scrollTargetX = clampScroll(scrollTargetX);
-    container.scrollTo({ left: scrollTargetX, behavior: 'smooth' });
+    scrollTargetX = clampScroll(container, scrollTargetX);
+    container.scrollTo({ left: scrollTargetX, behavior: "smooth" });
   });
 }
-*/
+
+// Setări pentru toate cele 3 containere
+setupScroll("principal-cont-1", "leftBtn1", "rightBtn1");
+setupScroll("principal-cont-2", "leftBtn2", "rightBtn2");
+setupScroll("principal-cont-3", "leftBtn3", "rightBtn3");
+
+});

@@ -6,6 +6,7 @@
     <title>Coffee & Tea</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/round-logo.png">
+    <script src="action.js" defer></script>
 </head>
 <body>
 <header>
@@ -30,7 +31,7 @@
     </navbar>
     
     <div class="mobile-menu" id="mobile-menu">
-        <div class="top-menu">Coffee & Tea</div>
+        <div class="top-menu">Not Working!</div>
         <ul class="content-menu">
             <li><button>Acasa</button></li>
             <li><button>Despre Noi</button></li>
@@ -55,7 +56,6 @@
     </div>
 </div>
 </header>
-<br><br><br><br>
 <main>
     <div class="rly-all-cont">
         <p class="magazin-online">Magazin Online</p>
@@ -63,30 +63,11 @@
         <div id="all-cont1" class="all-cont">
         <p class="type-categories">☕ Cafea Clasică/Rece</p>
         <div class="princ">
-            <button id="leftBtn" class="leftBtn">&lt;</button>
+            <button id="leftBtn1" class="leftBtn">&lt;</button>
             <ul id="principal-cont-1" class="principal-cont">
-            <!--Produse
-            <div class="card">
-                <div class="img-cont"><img src="images/CafeaClasicaImg/espressoSimple.png" class="product-img"></div>
-                <p class="title">Espresso Simplu</p>
-                <p class="price">Pret: 9 lei</p>
-                <div class="btn-cont">
-                    <button class="buy-prod">Cumpara</button>
-                    <button class="see-prod">Vezi Detalii</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img-cont"><img src="images/CafeaClasicaImg/americano.png" class="product-img"></div>
-                <p class="title">Americano</p>
-                <p class="price">Pret: 10 lei</p>
-                <div class="btn-cont">
-                    <button class="buy-prod">Cumpara</button>
-                    <button class="see-prod">Vezi Detalii</button>
-                </div>
-            </div>-->
+                <!--Section 1 content-->
             </ul>
-            <button id="rightBtn" class="rightBtn">&gt;</button>
+            <button id="rightBtn1" class="rightBtn">&gt;</button>
         </div>
     </div><br>
     <!--SECTION 2-->
@@ -96,18 +77,65 @@
             <button id="leftBtn2" class="leftBtn">&lt;</button>
             <ul id="principal-cont-2" class="principal-cont">
                 <!--Section 2 content-->
-
             </ul>
             <button id="rightBtn2" class="rightBtn">&gt;</button>
+        </div>
+    </div><br>
+    <!--SECTION 3-->
+    <div id="all-cont3" class="all-cont">
+        <p class="type-categories">🍵Băuturi/🍹Răcoritoare</p>
+        <div class="princ">
+            <button id="leftBtn3" class="leftBtn">&lt;</button>
+            <ul id="principal-cont-3" class="principal-cont">
+                <!--Section 2 content-->
+            </ul>
+            <button id="rightBtn3" class="rightBtn">&gt;</button>
         </div>
     </div>
     </div>
     </div>
 
-<br><br><br><br>
+    <div class="all-email-container">
+        <p class="contacteaza-ne">Contacteaza-ne!</p>
+        <div class="email-container">
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="8f4f4141-481d-4c39-82b3-820926f7d8c1">
+
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+    <div>
+    <label>Nume:</label>
+    <input type="text" name="name" class="contact-name" required>
+    </div>
+    <div>
+    <label>Email:<span></span></label>
+    <input type="email" name="email" class="contact-email" required>
+    </div>
+    <p class="real-email-text">*Vă rugăm să introduceți un email valid.</p>
+    <div class="mesaj-container">
+    <label>Mesaj:</label><br>
+    <textarea name="message" class="mesaj" required></textarea><br>
+    </div><br>
+
+    <!-- Honeypot Spam Protection -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+    <!-- Custom Confirmation / Success Page -->
+    <input type="hidden" name="redirect" value="https://coffee.mihaii.com/send.html">
+    <div class="submit-container">
+        <button type="submit" class="submit">Submit Form</button>
+    </div>
+
+        </form>
+    </div>
+    </div>
+
+</main>
+<br><br>
 <p class="soon1">COMMING SOON!</p>
 <p class="soon2">Powered by <a href="https://mihaii.com/" >devMihai</a></p>
-<br><br><br><br><br><br>
+<br><br>
 
 <footer>
     <div class="footer-div">
@@ -115,13 +143,14 @@
         <p>Powered by <a href="https://mihaii.com/" class="devMihai">devMihai</a></p>
     </div>
 </footer>
-<script src="action.js" defer></script>
 </body>
 </html>
 
 <!-- Duration/TimeLog
  
 Day 1 = 4.5h;
+Day 2 = 5h;
+Day 3 = 3h;
 
 ☕ Cafea Clasică
 Produs	Preț (RON)

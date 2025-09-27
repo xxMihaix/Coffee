@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+ const map = document.getElementById('vezi-map');
+ map.addEventListener('click', function(){
+   window.location.href = "https://www.google.ro/maps/place/Colegiul+Tehnic+Mircea+cel+B%C3%A2tr%C3%A2n/@44.4659576,26.0562517,17.75z/data=!4m6!3m5!1s0x40b20225c07e74d1:0xb8b6b3654e61c3e0!8m2!3d44.4661433!4d26.057437!16s%2Fg%2F1hc2pc797?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D";
+})
+
 
 const products1 = [
   {title: 'Espresso', price: 9, image: 'images/CafeaClasicaImg/espressoSimple.png'},

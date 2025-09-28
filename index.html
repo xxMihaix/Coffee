@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/round-logo.png">
     <script src="action.js" defer></script>
+    <script src="butoane.js" defer></script>
 </head>
 <body>
 <header>
@@ -14,34 +15,42 @@
     <navbar class="navbar">
         <p>Coffee & Tea</p>
         <ul class="list">
-            <li><button>Acasa</button></li>
-            <li><button>Despre Noi</button></li>
-            <li><button>Produse</button></li>
-            <li><button>Contact</button></li>
-            <li><button><img src="images/cart.svg" class="cart-svg"></button></li>
+            <li><button id="acasa1">Acasa</button></li>
+            <li><button id="despre1">Despre Noi</button></li>
+            <li><button id="produse1">Produse</button></li>
+            <li><button id="contact1">Contact</button></li>
+            <li><button id="open-cart1"><img src="images/cart.svg" class="cart-svg"></button></li>
         </ul>
     </navbar>
     <!-- Mobile Navbar -->
     <navbar class="navbar-mobile">
         <p>Coffee & Tea</p>
         <ul class="list">
-            <li><button><img src="images/cart.svg" class="cart-svg"></button></li>
+            <li><button id="open-cart2"><img src="images/cart.svg" class="cart-svg"></button></li>
             <li><button id="open-menu"><img src="images/menu.svg" class="cart-svg"></button></li>
         </ul>
     </navbar>
     
     <div class="mobile-menu" id="mobile-menu">
-        <div class="top-menu">Not Working!</div>
+        <div class="top-menu">Coffee & Tea</div>
         <ul class="content-menu">
-            <li><button>Acasa</button></li>
-            <li><button>Despre Noi</button></li>
-            <li><button>Produse</button></li>
-            <li><button>Contact</button></li>
+            <li><button id="acasa2">Acasa</button></li>
+            <li><button id="despre2">Despre Noi</button></li>
+            <li><button id="produse2">Produse</button></li>
+            <li><button id="contact2">Contact</button></li>
         </ul>
     </div>
 
+    <div id="cart-container" class="cart-container">
+        <div class="align-items"></div>
+        <div class="cart-title-container">
+            <p>Produse:</p>
+            <button id="exit-cart" class="exit-cart">Inchide</button>
+        </div>
+    </div>
+
     <!-- Navbar -->
-     <div class="header-container">
+     <div class="header-container" id="acasa">
     <!-- Video ca fundal -->
     <video src="images/Video.mp4" class="video" autoplay muted loop playsinline></video>
 
@@ -50,14 +59,14 @@
         <p class="title-prin">Bine ai venit la Coffee & Tea</p>
         <p class="description">Savurează aroma perfectă a cafelei și ceaiului nostru, pregătite cu pasiune pentru momentele tale speciale.</p>
         <div class="buttons-go">
-            <button>Locatie <span>↗</span></button>
-            <button>Vezi Produse <span>↗</span></button>
+            <button id="produse3">Vezi Produse <span>↗</span></button>
+            <button id="contact3">Contact <span>↗</span></button>
         </div>
     </div>
 </div>
 </header>
 <main>
-    <div class="center-all">
+    <div id="despre" class="center-all">
         <p class="title-despre-noi">Despre Noi</p>
         <div class="colect-all">
             <div class="container-text">
@@ -69,8 +78,7 @@
                 </div>
                 <!--<div class="par">
                     <p>Ne adresăm atât iubitorilor pasionați, cât și celor aflați la început de drum în descoperirea universului cafelei și ceaiului. Fiecare produs din colecția noastră este ales cu atenție pentru a reflecta diversitatea și rafinamentul gusturilor din întreaga lume.</p>
-                </div>-->
-                
+                </div>-->       
        </div>
             <div class="container-map">
                 <div class="immg">
@@ -80,9 +88,15 @@
         </div>
     </div>
 
+    <div class="center-all">
+        <div class="spec">
+            <p class="soft">Software 2.0 Comming Soon!</p>
+            <p class="soft-text">Software 2.0 se refera la o versiune in dezvoltare unde va fi posibil cumpararea produselor, inrolare conturi in baza de date si chiar efectuarea platilor pentru a plasa comanda.</p>
+            <button onclick="alert('Momentan nu oferim informatii privind stadiul de lucru!')" class="btn-soft">Vezi Site<span> ↗</span></button>
+        </div>
+    </div>
 
-
-    <div class="rly-all-cont">
+    <div id="produse" class="rly-all-cont">
         <p class="magazin-online">Magazin Online</p>
         <div class="recenter">
         <div id="all-cont1" class="all-cont">
@@ -120,7 +134,7 @@
     </div>
     </div>
 
-    <div class="all-email-container">
+    <div id="contact" class="all-email-container">
         <p class="contacteaza-ne">Contacteaza-ne!</p>
         <div class="email-container">
         <form action="https://api.web3forms.com/submit" method="POST">
@@ -164,6 +178,7 @@
 <br><br>
 -->
 <br><br>
+
 <footer>
     <div class="footer-div">
         <p>© 2025 Coffee & Tea. Toate drepturile rezervate.</p>
@@ -177,7 +192,9 @@
  
 Day 1 = 4.5h;
 Day 2 = 5h;
-Day 3 = 3h;
+Day 3 = 5h;
+day 4 = 2h;
+day 5 = 5;
 
 ☕ Cafea Clasică
 Produs	Preț (RON)

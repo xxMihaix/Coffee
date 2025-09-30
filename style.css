@@ -166,7 +166,7 @@ html, body{
 .cart-container{
     width: 375px;
     height: 100vh;
-    background-color:#6F4E37;
+    background-color:#6f4e37db;
     position: fixed;
     top: 0px;
     z-index: 10;
@@ -207,6 +207,7 @@ html, body{
     align-items: center;
     border-top: 3px solid #3c2d22;
     border-bottom: 3px solid #3c2d22;
+    background-color:#6f4e37;
 }
 
 .cart-title-container p{
@@ -354,6 +355,10 @@ html, body{
 
 
 /************* Despre Noi ****************/
+
+#despre{
+    margin-top: 0px;
+}
 
 .center-all{
     width: 100%;
@@ -514,6 +519,92 @@ html, body{
         height: 250px;
     }
 }
+
+/************* Wrapper ***************/
+
+.wrapper{
+    margin: 0px;
+    width: 95%;
+    max-width: 1200px;
+    gap: 100px;
+    margin-inline: auto;
+    position: relative;
+    height: 70px;
+    overflow: hidden;
+}
+
+@keyframes scrollLeft {
+    to{
+        left: -200px;
+    }
+}
+
+@media(max-width: 830px){
+    .item{
+        width: 150px;
+        left: calc(150px * 8);
+    }
+}
+
+@media(max-width: 500px){
+    .item{
+        font-size: 20px;
+        width: 120px;
+        left: calc(120px * 8);
+    }
+}
+
+.item{
+    width: 180px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #795439;
+    font-weight: bold;
+    font-size: 22px;
+    background-color: transparent;
+    border-radius: 5px;
+    position: absolute;
+    left: calc(200px * 8);
+    animation: scrollLeft 30s linear infinite;
+}
+
+.item1 {
+    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item2 {
+    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.item3 {
+    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.item4 {
+    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.item5 {
+    animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6 {
+    animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.item7 {
+    animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.item8 {
+    animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+
+
 
 /************  Online Store  ************/
 
@@ -752,8 +843,6 @@ html, body{
     }
 }
 
-
-
 @media(max-width: 390px){
     .type-categories{
         font-size: 20px;
@@ -792,7 +881,7 @@ html, body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 10px;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -915,4 +1004,25 @@ html, body{
 .devMihai{
     color: white;
     font-weight: bold;
+}
+
+/*************** Animation Entry ****************/
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(3px);
+    transform: translateY(20%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0)
+}
+
+@media(prefers-reduced-motion){
+    .hidden {
+        transition: none;
+    }
 }

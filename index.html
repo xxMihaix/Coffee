@@ -8,6 +8,7 @@
     <link rel="icon" href="images/round-logo.png">
     <script src="action.js" defer></script>
     <script src="butoane.js" defer></script>
+    <script src="animation.js" defer></script>
 </head>
 <body>
 <header>
@@ -66,14 +67,26 @@
 </div>
 </header>
 <main>
+
+    <div class="wrapper hidden">
+        <div class="item item1">#MatchaVibes</div>
+        <div class="item item2">#SpecialtyCoffee</div>
+        <div class="item item3">#TeaLovers</div>
+        <div class="item item4">#MorningCoffee</div>
+        <div class="item item5">#LatteArt</div>
+        <div class="item item6">#AromeUnice</div>
+        <div class="item item7">#AfternoonTea</div>
+        <div class="item item8">#OrganicTea</div>
+    </div>
+
     <div id="despre" class="center-all">
-        <p class="title-despre-noi">Despre Noi</p>
+        <p class="title-despre-noi hidden">Despre Noi</p>
         <div class="colect-all">
             <div class="container-text">
-                <div class="par">
+                <div class="par hidden">
                     <p>Coffee & Tea este o companie din București, specializată în comercializarea cafelei și ceaiului de calitate superioară. Oferim o gamă variată de băuturi calde, selectate cu grijă din cele mai bune surse internaționale, pentru a oferi clienților noștri o experiență autentică, plină de gust și rafinament.</p>
                 </div>
-                <div class="par">
+                <div class="par hidden">
                     <p>Punem accent pe calitate, responsabilitate și pasiunea pentru arome desăvârșite. Fie că ești în căutarea unei cafele intense sau a unui ceai aromat, la Coffee & Tea găsești întotdeauna ceva special.</p>
                 </div>
                 <!--<div class="par">
@@ -81,7 +94,7 @@
                 </div>-->       
        </div>
             <div class="container-map">
-                <div class="immg">
+                <div class="immg hidden">
                     <button id="vezi-map" class="vezi-map">Vezi pe Maps <span> ↗</span></button>
                 </div>
             </div>
@@ -89,7 +102,7 @@
     </div>
 
     <div class="center-all">
-        <div class="spec">
+        <div class="spec hidden">
             <p class="soft">Software 2.0 Comming Soon!</p>
             <p class="soft-text">Software 2.0 se refera la o versiune in dezvoltare unde va fi posibil cumpararea produselor, inrolare conturi in baza de date si chiar efectuarea platilor pentru a plasa comanda.</p>
             <button onclick="alert('Momentan nu oferim informatii privind stadiul de lucru!')" class="btn-soft">Vezi Site<span> ↗</span></button>
@@ -97,11 +110,11 @@
     </div>
 
     <div id="produse" class="rly-all-cont">
-        <p class="magazin-online">Magazin Online</p>
+        <p class="magazin-online hidden">Magazin Online</p>
         <div class="recenter">
         <div id="all-cont1" class="all-cont">
-        <p class="type-categories">☕ Cafea Clasică/Rece</p>
-        <div class="princ">
+        <p class="type-categories hidden">☕ Cafea Clasică/Rece</p>
+        <div class="princ hidden">
             <button id="leftBtn1" class="leftBtn">&lt;</button>
             <ul id="principal-cont-1" class="principal-cont">
                 <!--Section 1 content-->
@@ -111,8 +124,8 @@
     </div><br>
     <!--SECTION 2-->
     <div id="all-cont2" class="all-cont">
-        <p class="type-categories">🌿 Ceaiuri Naturale</p>
-        <div class="princ">
+        <p class="type-categories hidden">🌿 Ceaiuri Naturale</p>
+        <div class="princ hidden">
             <button id="leftBtn2" class="leftBtn">&lt;</button>
             <ul id="principal-cont-2" class="principal-cont">
                 <!--Section 2 content-->
@@ -122,8 +135,8 @@
     </div><br>
     <!--SECTION 3-->
     <div id="all-cont3" class="all-cont">
-        <p class="type-categories">🍵Băuturi/🍹Răcoritoare</p>
-        <div class="princ">
+        <p class="type-categories hidden">🍵Băuturi/🍹Răcoritoare</p>
+        <div class="princ hidden">
             <button id="leftBtn3" class="leftBtn">&lt;</button>
             <ul id="principal-cont-3" class="principal-cont">
                 <!--Section 2 content-->
@@ -134,9 +147,20 @@
     </div>
     </div>
 
+    <div class="wrapper hidden">
+        <div class="item item1">#MatchaVibes</div>
+        <div class="item item2">#SpecialtyCoffee</div>
+        <div class="item item3">#TeaLovers</div>
+        <div class="item item4">#MorningCoffee</div>
+        <div class="item item5">#LatteArt</div>
+        <div class="item item6">#AromeUnice</div>
+        <div class="item item7">#AfternoonTea</div>
+        <div class="item item8">#OrganicTea</div>
+    </div>
+
     <div id="contact" class="all-email-container">
-        <p class="contacteaza-ne">Contacteaza-ne!</p>
-        <div class="email-container">
+        <p class="contacteaza-ne hidden">Contacteaza-ne!</p>
+        <div class="email-container hidden">
         <form action="https://api.web3forms.com/submit" method="POST">
 
     <!-- Replace with your Access Key -->
@@ -194,54 +218,5 @@ Day 1 = 4.5h;
 Day 2 = 5h;
 Day 3 = 5h;
 day 4 = 2h;
-day 5 = 5;
-
-☕ Cafea Clasică
-Produs	Preț (RON)
-Espresso simplu	9
-Espresso dublu	11
-Americano	10
-Cappuccino	12
-Caffe Latte	13
-Flat White	14
-Mocha	14
-Espresso Tonic	15
-
-.........................
-🧊 Cafea Rece
-Produs	Preț (RON)
-Cold Brew	15
-Iced Americano	12
-Iced Latte	14
-Iced Mocha	15
-Frappe clasic / cu arome	16
-
-..........................
-🌿 Ceaiuri Naturale (infuzii artizanale)
-Tip de Ceai	Preț (RON)
-Ceai verde (Jasmin / Sencha)	12
-Ceai negru (Earl Grey / Assam)	12
-Ceai de fructe de pădure	12
-Ceai de mentă / mușețel	12
-Rooibos (fără cofeină)	12
-Infuzie de lavandă & lămâie	13
-Ceai rece la infuzie (vara)	14
-
-............................
-🍵 Băuturi calde alternative
-Produs	Preț (RON)
-Matcha Latte	16
-Chai Latte	15
-Golden Latte (turmeric)	15
-Ciocolată caldă	14
-
-..............................
-🍹 Răcoritoare & Fresh-uri
-Produs	Preț (RON)
-Limonadă clasică / mentă / fructe	13
-Fresh de portocale	15
-Smoothie (fructe + iaurt/lapte)	16
-Apă plată / minerală	7
-Sucuri naturale / artizanale	12
-
--->
+day 5 = 5h;
+day 6 = 1.5h;

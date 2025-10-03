@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     cartButtons.forEach(el => {
-        el.addEventListener('click', function () {
+        el.addEventListener('click', function() {
             console.log('cart');
             cartContainer.classList.toggle('active');
 
@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
       cartContainer.classList.remove('active');
     })
 
-    document.getElementById("setari").addEventListener("click", function() {
+    /*document.getElementById("setari").addEventListener("click", function() {
     this.parentElement.classList.toggle("active");
-    });
+    });*/
 
 
     // ✅ Click pe hartă → deschide Google Maps
@@ -102,4 +102,27 @@ contact.forEach(el=>{
         const offset = document.getElementById('contact').getBoundingClientRect().top + window.pageYOffset -60;
         window.scrollTo({ top: offset, behavior: 'smooth'});
     })
+})
+
+///////////////////////////
+
+const fundalItems = document.querySelectorAll('body, .header-container, .video, .title-despre-noi, .immg, .spec, .soft, .soft-text, .item, .magazin-online, .princ, .type-categories, .princ, .email-container, .email-container form label, .real-email-text, label');
+
+const fundal = document.getElementById('img-switch');
+const sw = document.getElementById('switch')
+
+fundal.addEventListener('click', function(){
+    sw.classList.toggle('active');
+    fundalItems.forEach(el => el.classList.toggle('active'));
+
+    localStorage.setItem('imageActive', sw.classList.contains('active'));
+})
+
+window.addEventListener('DOMContentLoaded', function(){
+    const saves = this.localStorage.getItem('imageActive');
+    if(saves === 'true'){
+        sw.classList.add('active');
+        //Content Down
+        fundalItems.forEach(el => el.classList.toggle('active'));
+    }
 })

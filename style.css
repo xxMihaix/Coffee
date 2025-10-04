@@ -20,6 +20,10 @@ body {
   overflow-x: hidden;
 }
 
+body.dark{
+    background-color: #2e2c2c;
+}
+
 body.active::before {
   content: "";
   position: fixed; /* Rămâne fix pe ecran */
@@ -33,7 +37,6 @@ body.active::before {
   background-repeat: no-repeat;
   filter: blur(0px) brightness(0.5); /* blur + întunecare */
   z-index: -1; /* trimite-l în spate */
-  transition: 0.5s;
 }
 
 
@@ -52,6 +55,10 @@ body.active::before {
     position: fixed;
     z-index: 100;
     width: 100%;
+}
+
+.navbar.dark{
+    background-color: #1E1E1E;
 }
 
 @media(max-width: 1070px){
@@ -78,6 +85,10 @@ body.active::before {
     width: 100%;
 }
 
+.navbar-mobile.dark{
+    background-color: #1E1E1E;
+}
+
 .list{
     gap: 30px;
     align-items: center;
@@ -89,6 +100,10 @@ body.active::before {
     font-weight: bold;
     font-size: 30px;
     padding: 7px;
+}
+
+.list.dark{
+    background-color: #1E1E1E;
 }
 
 .list li{
@@ -142,9 +157,13 @@ body.active::before {
     display: block;
 }
 
+.mobile-menu.dark{
+    background-color: #1e1e1eac;
+}
+
 @media(max-width: 370px){
     .mobile-menu{
-        width: 210px;
+        width: 250px;
     }
 }
 
@@ -204,6 +223,12 @@ body.active::before {
     border-right: none;
 }
 
+.cart-container.dark{
+    background-color: #1e1e1ea2;
+    border-bottom: none;
+    border-left: 2px solid #1E1E1E;
+}
+
 #cart-container{
   transform: translateX(100%);
   transition: transform 0.3s ease;
@@ -239,6 +264,12 @@ body.active::before {
     background-color:#6f4e37;
 }
 
+.cart-title-container.dark{
+    background-color: #2e2c2c;
+    border: none;
+}
+
+
 .cart-title-container p{
     color: white;
     font-size: 25px;
@@ -269,6 +300,10 @@ body.active::before {
     border-bottom: 5px solid #694a33;
 }
 
+.header-container.dark{
+    border-bottom: 5px solid #1E1E1E;
+}
+
 .header-container.active{
     border-bottom: none;
 }
@@ -288,6 +323,10 @@ body.active::before {
 
 .video.active{
     display: none;
+}
+
+.video.dark{
+    filter: brightness(0.6) contrast(1) saturate(1);
 }
 
 .principal-text {
@@ -380,6 +419,10 @@ body.active::before {
 .content-menu{
     gap: 0px;
 }
+
+#margin-top{
+    margin-top: 20px;
+}
 }
 
 .center{
@@ -389,7 +432,7 @@ body.active::before {
     align-items: center;
 }
 
-.btn-img{
+.btn-img, .btn-dark{
     height: 35px;
     width: 70px;
     background-color: rgb(255, 255, 255);
@@ -398,7 +441,8 @@ body.active::before {
     cursor: pointer;
 }
 
-#switch{
+
+#switch1, #switch2{
     background-color: #795439;
     position: absolute;
     height: 30px;
@@ -413,11 +457,18 @@ body.active::before {
     transition: 0.5s;
 }
 
-#switch.active{
+#switch1.active, #switch2.active{
     left: 34px;
     transition: 0.5s;
 }
 
+#switch2.frr{
+    background-color: #795439;
+}
+
+#switch1.dark, #switch2.dark{
+    background-color: #2e2c2c;
+}
 
 
 /***************** SOON *************************************************************/
@@ -468,7 +519,7 @@ body.active::before {
     color:#6f4e37;
 }
 
-.title-despre-noi.active{
+.title-despre-noi.active, .title-despre-noi.dark{
     color:#ffffff;
 }
 
@@ -501,6 +552,13 @@ body.active::before {
    background-color: #845839;
     padding: 15px;
     border-radius: 17px;
+    transition: 0s;
+}
+
+.par.dark{
+    background-color: #403d3d;
+    border: 3px solid white;
+    transition: 0s;
 }
 
 .container-map {
@@ -510,6 +568,7 @@ body.active::before {
     align-items: center;
     flex-direction: column;
     gap: 20px;
+        transition: 0s;
 }
 
 .immg{
@@ -523,7 +582,7 @@ body.active::before {
     position: relative;
 }
 
-.immg.active{
+.immg.active, .immg.dark{
     border: 3px solid #ffffff;
 }
 
@@ -540,7 +599,12 @@ body.active::before {
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
-    width: 170px;
+    width: 180px;
+}
+
+.vezi-map.dark{
+    border: 3px solid white;
+    background-color: #2e2c2c
 }
 
 /************ Software 2.0 *************/
@@ -559,7 +623,7 @@ body.active::before {
     padding: 15px;
 }
 
-.spec.active{
+.spec.active, .spec.dark{
     border: 3px solid #ffffff;
 }
 
@@ -573,7 +637,7 @@ body.active::before {
     text-align: center;
 }
 
-.soft.active{
+.soft.active, .soft.dark{
     color:#ffffff;
 }
 
@@ -584,7 +648,7 @@ body.active::before {
     margin-bottom: 10px;
 }
 
-.soft-text.active{
+.soft-text.active, .soft-text.dark{
     color: #ffffff;
 }
 
@@ -598,7 +662,12 @@ body.active::before {
     padding: 4px 15px;
     cursor: pointer;
     width: 130px;
+}
 
+.btn-soft.dark{
+    background-color: #1E1E1E;
+    color: white;
+    border: 2px solid white;
 }
 
 
@@ -682,7 +751,7 @@ body.active::before {
     animation: scrollLeft 30s linear infinite;
 }
 
-.item.active{
+.item.active, .item.dark{
     color: #ffffff;
 }
 
@@ -740,7 +809,7 @@ body.active::before {
     margin-bottom: 30px;
 }
 
-.magazin-online.active{
+.magazin-online.active, .magazin-online.dark{
     color: #ffffff;
 }
 
@@ -771,7 +840,7 @@ body.active::before {
     width: 100%;
 }
 
-.princ.active{
+.princ.active, .princ.dark{
     border-top: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
 }
@@ -807,11 +876,19 @@ body.active::before {
     transform: translateY(-50%);
 }
 
+.leftBtn.dark{
+    background-color: #1E1E1E;
+}
+
 .rightBtn{
     position: absolute;
     right: 0px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.rightBtn.dark{
+    background-color: #1E1E1E;
 }
 
 .rightBtn, .leftBtn{
@@ -865,6 +942,10 @@ body.active::before {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.card.dark{
+    background-color: #403d3d;
 }
 
 .product-img{
@@ -928,7 +1009,7 @@ body.active::before {
     text-align: left;
 }
 
-.type-categories.active{
+.type-categories.active, .type-categories.dark{
     color: #ffffff;
 }
 
@@ -945,7 +1026,7 @@ body.active::before {
         border-bottom: 3px solid #795439;
     }
 
-    .princ.active{
+    .princ.active, .princ.dark{
         border-top: 3px solid #bab4b0;   
         border-bottom: 3px solid #bab4b0;
     }
@@ -1010,7 +1091,10 @@ body.active::before {
   cursor: pointer;
 }
 
-
+#produse3.dark, #contact3.dark{
+    background-color: #2e2c2c;
+    border: 2px solid white;
+}
 
 /*********** Contact Us ***********/
 
@@ -1040,7 +1124,7 @@ body.active::before {
     margin-bottom: 10px;
 }
 
-.contacteaza-ne.active{
+.contacteaza-ne.active, .contacteaza-ne.dark{
     color:#f4f4f4;
 }
 
@@ -1054,7 +1138,7 @@ body.active::before {
     width: 100%;
 }
 
-.email-container.active{
+.email-container.active, .email-container.dark{
     border: 3px solid #ffffff;
 }
 
@@ -1083,12 +1167,16 @@ body.active::before {
     outline: none;
 }
 
+.contact-name.dark, .contact-email.dark{
+    background-color: #403d3d;
+}
+
 .email-container form label{
     color:#6f4e37;
     font-weight: bold;
 }
 
-.email-container form label.active{
+.email-container form label.active, .email-container form label.dark{
     color:#ffffff;
 }
 
@@ -1099,7 +1187,7 @@ body.active::before {
     margin-bottom: 15px;
 }
 
-.real-email-text.active{
+.real-email-text.active, .real-email-text.dark{
     color:#f5f5f5;
 }
 
@@ -1116,6 +1204,10 @@ body.active::before {
     padding: 15px;
     outline: none;
     color: white;
+}
+
+.mesaj.dark{
+    background-color: #403d3d;
 }
 
 .submit-container{
@@ -1137,6 +1229,11 @@ body.active::before {
     background-color:#6f4e37;
     padding: 2px 1px;
     cursor: pointer;
+}
+
+.submit.dark{
+    background-color: #1E1E1E;
+    border: 2px solid white;
 }
 
 label{
@@ -1164,6 +1261,11 @@ label.active{
     font-size: 14px;
     z-index: 99;
     border-top: 3px solid #3c2d22;
+}
+
+.footer-div.dark{
+    border-top: #1E1E1E;
+    background-color: #1E1E1E;
 }
 
 .devMihai{

@@ -106,23 +106,55 @@ contact.forEach(el=>{
 
 ///////////////////////////
 
-const fundalItems = document.querySelectorAll('body, .header-container, .video, .title-despre-noi, .immg, .spec, .soft, .soft-text, .item, .magazin-online, .princ, .type-categories, .princ, .email-container, .email-container form label, .real-email-text, label');
+const fundalItems = document.querySelectorAll('body, .header-container, .video, .title-despre-noi, .immg, .spec, .soft, .soft-text, .item, .magazin-online, .princ, .type-categories, .princ, .email-container, .email-container form label, .real-email-text, label, .contacteaza-ne');
+const darkItems = document.querySelectorAll('body, .navbar, .rightBtn, .cart-container, .cart-title-container, .footer-div, .submit, .mesaj, .contact-name, .contact-email, .card, .leftBtn, .navbar-mobile, .btn-soft, .vezi-map, .par, .header-container, .mobile-menu, #produse3, .video, #contact3, #switch1, #switch2, .list, .header-container, .title-despre-noi, .immg, .spec, .soft, .soft-text, .item, .magazin-online, .princ, .type-categories, .princ, .email-container, .email-container form label, .real-email-text, label, .contacteaza-ne')
 
 const fundal = document.getElementById('img-switch');
-const sw = document.getElementById('switch')
+const dark = document.getElementById('dark-switch');
+const sw = document.getElementById('switch1');
+const sw2 = document.getElementById('switch2');
 
 fundal.addEventListener('click', function(){
     sw.classList.toggle('active');
+    sw2.classList.remove('active');
     fundalItems.forEach(el => el.classList.toggle('active'));
+    darkItems.forEach(el => el.classList.remove('dark'));
 
+    localStorage.setItem('imageActive', sw.classList.contains('active'));
+    localStorage.setItem('darkActive', sw2.classList.contains('active'));
+})
+
+dark.addEventListener('click', function(){
+    sw2.classList.toggle('active');
+    sw.classList.remove('active');
+    darkItems.forEach(el => el.classList.toggle('dark'));
+    fundalItems.forEach(el => el.classList.remove('active'));
+
+    localStorage.setItem('darkActive', sw2.classList.contains('active'));
     localStorage.setItem('imageActive', sw.classList.contains('active'));
 })
 
 window.addEventListener('DOMContentLoaded', function(){
-    const saves = this.localStorage.getItem('imageActive');
-    if(saves === 'true'){
+    const save1 = localStorage.getItem('imageActive');
+    const save2 = localStorage.getItem('darkActive');
+
+    sw.classList.remove('active');
+    sw.classList.remove('dark');
+    sw2.classList.remove('active');
+    sw2.classList.remove('dark');
+
+    // Fundal activ
+    if(save1 === 'true'){
+        fundalItems.forEach(el => el.classList.add('active'));
         sw.classList.add('active');
-        //Content Down
-        fundalItems.forEach(el => el.classList.toggle('active'));
+        sw2.classList.remove('dark');
     }
-})
+
+    // Dark mode activ
+    if(save2 === 'true'){
+        sw2.classList.add('active');
+        sw.classList.add('dark');
+        sw2.classList.add('dark');
+        darkItems.forEach(el => el.classList.add('dark'));
+    }
+});

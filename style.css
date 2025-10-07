@@ -143,7 +143,7 @@ body.active::before {
         padding-right: 15px;
     }
     .list{
-        gap: 15px;
+        gap: 20px;
     }
 }
 
@@ -556,7 +556,7 @@ body.active::before {
 }
 
 .par.dark{
-    background-color: #403d3d;
+    background-color: #403d3d00;
     border: 3px solid white;
     transition: 0s;
 }
@@ -1136,10 +1136,20 @@ body.active::before {
         height: 120px;
     }
 
-    .buy-prod, .see-prod{
+    .buy-prod{
         font-size: 15px;
         padding: 0px 15px;
     }
+
+    .see-prod{
+        font-size: 15px;
+        height: 100%;
+    }
+
+    .star{
+        height: 100%;
+    }
+
 }
 
 @media(max-width: 390px){

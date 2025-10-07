@@ -224,7 +224,7 @@ body.active::before {
 }
 
 .cart-container.dark{
-    background-color: #1e1e1ea2;
+    background-color: #181717e6;
     border-bottom: none;
     border-left: 2px solid #1E1E1E;
 }
@@ -786,9 +786,80 @@ body.active::before {
 .item8 {
     animation-delay: calc(30s / 8 * (8 - 8) * -1);
 }
+/*********** Cart Products **************/
 
+#prod-content{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 65%;
+    overflow-y: auto;
+}
 
+.show-price{
+    height: 30%;
+    border-top: 2px solid white;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+}
 
+.prod{
+    background-color: transparent;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    gap: 3%;
+    align-items: center;
+    padding-right: 2%;
+}
+
+.title-cart{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.quantity{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.decrease, .increase{
+    width: 9%;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.remove{
+    background-color: rgb(197, 14, 14);
+    border: 0px;
+    border-radius: 25px;
+    padding: 0px 15px;
+    color: white;
+    font-weight: bold;
+    width: 24%;
+    height: 100%;
+    cursor: pointer;
+}
 
 /************  Online Store  ************/
 
@@ -984,8 +1055,16 @@ body.active::before {
     padding: 0px 25px;
     border: 1px solid white;
     border-radius: 25px;
-    width: 100%;
+    width: 90%;
     cursor: pointer;
+}
+
+.fav-add{
+    background-color: transparent;
+    width: 90%;
+    display: flex;
+    gap: 4px;
+    align-items: center;
 }
 
 .see-prod{
@@ -993,11 +1072,17 @@ body.active::before {
     font-weight: bold;
     color: white;
     background-color: transparent;
-    padding: 0px 25px;
     border: 1px solid white;
     border-radius: 25px;
-    width: 100%;
+    width: 75%;
     cursor: pointer;
+    height: 90%;
+}
+
+.star{
+    height: auto;
+    width: 20%;
+    filter: invert(100%);
 }
 
 

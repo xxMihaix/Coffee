@@ -36,19 +36,20 @@ const products3 = [
   {title: 'Smoothie', price: 16, image: 'images/BauturiFreshImg/Smoothie.png'},
   {title: 'Apă plată', price: 7, image: 'images/BauturiFreshImg/Apă plată.png'},
   {title: 'Sucuri naturale', price: 12, image: 'images/BauturiFreshImg/Sucuri naturale.png'},
+  {title: 'Mihaié Champ', price: 799, image: 'images/BauturiFreshImg/Gold.png'},
 ];
 
 const section1 = document.getElementById('principal-cont-1');
 section1.innerHTML = '';
-products1.forEach(p => {
+products1.forEach((p, index) => {
   const productHTML = `
-    <li class="card">
+    <li class="card" data-index=${index}>
       <div class="img-cont"><img src="${p.image}" class="product-img"></div>
       <p class="title">${p.title}</p>
       <p class="price">${p.price} lei</p>
       <div class="btn-cont">
         <button class="buy-prod">Cumpără</button>
-        <button class="see-prod">Vezi Detalii</button>
+        <div class='fav-add'><button class="see-prod">Detalii</button><img class='star' src='images/star.svg'></div>
       </div>
     </li>`;
   section1.innerHTML += productHTML;
@@ -56,15 +57,15 @@ products1.forEach(p => {
 
 const section2 = document.getElementById('principal-cont-2');
 section2.innerHTML = '';
-products2.forEach(p => {
+products2.forEach((p, index) => {
   const productHTML = `
-    <li class="card">
+    <li class="card" data-index=${index}>
       <div class="img-cont"><img src="${p.image}" class="product-img"></div>
       <p class="title">${p.title}</p>
       <p class="price">${p.price} lei</p>
       <div class="btn-cont">
         <button class="buy-prod">Cumpără</button>
-        <button class="see-prod">Vezi Detalii</button>
+        <div class='fav-add'><button class="see-prod">Detalii</button><img class='star' src='images/star.svg'></div>
       </div>
     </li>`;
   section2.innerHTML += productHTML;
@@ -72,15 +73,15 @@ products2.forEach(p => {
 
 const section3 = document.getElementById('principal-cont-3');
 section3.innerHTML = '';
-products3.forEach(p => {
+products3.forEach((p, index) => {
   const productHTML = `
-    <li class="card">
+    <li class="card" data-index=${index}>
       <div class="img-cont"><img src="${p.image}" class="product-img"></div>
       <p class="title">${p.title}</p>
       <p class="price">${p.price} lei</p>
       <div class="btn-cont">
         <button class="buy-prod">Cumpără</button>
-        <button class="see-prod">Vezi Detalii</button>
+        <div class='fav-add'><button class="see-prod">Detalii</button><img class='star' src='images/star.svg'></div>
       </div>
     </li>`;
   section3.innerHTML += productHTML;
@@ -120,3 +121,4 @@ function setupScroll(containerId, leftBtnId, rightBtnId) {
 setupScroll("principal-cont-1", "leftBtn1", "rightBtn1");
 setupScroll("principal-cont-2", "leftBtn2", "rightBtn2");
 setupScroll("principal-cont-3", "leftBtn3", "rightBtn3");
+

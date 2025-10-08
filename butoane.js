@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('open-menu1').addEventListener('click', function () {
         console.log('menu1');
         menu.classList.toggle('active');
-
         // 🔒 Închide coșul dacă e deschis
         cartContainer.classList.remove('active');
     });
@@ -23,6 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
         cartContainer.classList.remove('active');
     });
 
+    document.addEventListener('click', (e) => {
+  const menu = document.getElementById('mobile-menu');
+  const btn1 = document.getElementById('open-menu1');
+  const btn2 = document.getElementById('open-menu2');
+
+  // dacă clickul NU e nici pe meniu, nici pe butoanele de meniu
+  if (
+    !menu.contains(e.target) && !btn1.contains(e.target) && !btn2.contains(e.target)) {
+    menu.classList.remove('active');
+  }
+  });
+    
     // ✅ Deschidere coș (cart)
     const cartButtons = [
         document.getElementById('open-cart1'),

@@ -28,7 +28,7 @@ const products2 = [
 
 const products3 = [
   {title: 'Matcha Latte', price: 16, image: 'images/BauturiFreshImg/Matcha Latte.png'},
-  {title: 'Chai Latte', price: 15, image: 'images/BauturiFreshImg/Chai Latte.png'},
+  {title: 'Ceai Latte', price: 15, image: 'images/BauturiFreshImg/Chai Latte.png'},
   {title: 'Golden Latte', price: 15, image: 'images/BauturiFreshImg/Golden Latte.png'},
   {title: 'Ciocolată caldă', price: 14, image: 'images/BauturiFreshImg/Ciocolată caldă.png'},
   {title: 'Limonadă', price: 13, image: 'images/BauturiFreshImg/Limonadă.png'},

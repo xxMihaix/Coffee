@@ -37,7 +37,7 @@ function loadCartItems(){
     total += totalPrice;
     const cartItemsHTML = `
                 <div class="prod" data-index="${index}">
-                    <div class="title-cart">${item.title}</div>
+                    <div class="title-cart">${item.title}<pre>  </pre>${item.price} lei X${item.quantity}</div>
                     <button class="decrease">&lt;</button>
                     <p class="quantity">${item.quantity}</p>
                     <button class="increase">&gt;</button>

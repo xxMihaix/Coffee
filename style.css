@@ -212,7 +212,7 @@ body.active::before {
 /****************** Cos cu produse *********************/
 
 .cart-container{
-    width: 375px;
+    width: 400px;
     height: 100vh;
     background-color:#6f4e37db;
     position: fixed;
@@ -825,18 +825,20 @@ body.active::before {
     flex-direction: row;
     padding-top: 8px;
     padding-bottom: 8px;
-    gap: 3%;
+    gap: 2%;
     align-items: center;
     padding-right: 2%;
 }
 
 .title-cart{
-    width: 45%;
+    width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: bold;
+    font-size: 14px;
+    text-align: center;
 }
 
 .quantity{

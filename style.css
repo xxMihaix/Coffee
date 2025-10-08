@@ -517,6 +517,13 @@ body.active::before {
     font-size: 35px;
     font-weight: bold;
     color:#6f4e37;
+    margin-bottom: 10px;
+}
+
+@media(max-width: 420px){
+    .title-despre-noi{
+        margin: 0px;
+    }
 }
 
 .title-despre-noi.active, .title-despre-noi.dark{
@@ -1083,8 +1090,23 @@ body.active::before {
     height: auto;
     width: 20%;
     filter: invert(100%);
+    cursor: pointer;
+    fill: white;
 }
 
+.star:hover{
+    fill: white;
+}
+
+.heart{
+    width: 20%;
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+.heart:hover{
+    fill: rgb(0, 0, 0);
+}
 
 
 .type-categories{
@@ -1188,7 +1210,7 @@ body.active::before {
 
 #produse3.dark, #contact3.dark{
     background-color: #2e2c2c;
-    border: 2px solid white;
+    border: 0px solid white;
 }
 
 /*********** Contact Us ***********/

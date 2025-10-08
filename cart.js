@@ -20,6 +20,7 @@ function addItemCart(event) {
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     loadCartItems();
+    document.getElementById('cart-container').classList.add('active');
 }
 
 function loadCartItems(){
@@ -97,6 +98,7 @@ function removeQuantity(event){
 
     cartItems.splice(index, 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    loadCartItems();
 }
 
 window.addEventListener('load', () => {

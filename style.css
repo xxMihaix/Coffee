@@ -147,6 +147,9 @@ body.active::before {
     .list{
         gap: 20px;
     }
+    .spc{
+        margin-left: 5px;
+    }
 }
 
 
@@ -251,7 +254,7 @@ body.active::before {
 
 .align-items{
     width: 100%;
-    height: 59px;
+    height: 54px;
 }
 
 .cart-title-container{

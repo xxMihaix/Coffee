@@ -1,4 +1,6 @@
-
+document.querySelectorAll('.buy-prod').forEach(button => {
+    button.addEventListener('click', addItemCart);
+})
 
 function addItemCart(event) {
     const productElement = event.target.closest('.card');
@@ -11,10 +13,10 @@ function addItemCart(event) {
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
     const existingProduct = cartItems.find(item => item.title === product.title);
-    if(existingProduct){
+    if (existingProduct) {
         existingProduct.quantity += 1;
     }
-    else{
+    else {
         cartItems.push(product);
     }
 
@@ -22,8 +24,106 @@ function addItemCart(event) {
     loadCartItems();
     document.getElementById('cart-container').classList.add('active');
 }
+/*
+document.querySelectorAll('.heart').forEach(el => {
+    el.addEventListener('click', addFavorite);
+})
 
-function loadCartItems(){
+function addFavorite(event) {
+    const favElement = event.target.closest('.card');
+    const fav = {
+        title: favElement.querySelector('.title').textContent,
+        price: parseFloat(favElement.querySelector('.price').textContent),
+        favorite: true
+    }
+
+    let favItems = JSON.parse(localStorage.getItem('favItems')) || [];
+    favItems.push(fav);
+    localStorage.setItem('favItems', JSON.stringify(favItems));
+    loadFavorites();
+}
+
+function loadFavorites() {
+    const favElement = event.target.closest('.card');
+    const heart = favElement.querySelector('.heart');
+    const title = favElement.querySelector('.title').textContent;
+    const price = parseFloat(favElement.querySelector('.price').textContent);
+
+    let favItems = JSON.parse(localStorage.getItem('favItems')) || [];
+
+    // Verificăm dacă produsul e deja în favorite
+    const existingIndex = favItems.findIndex(item => item.title === title);
+
+    if (existingIndex !== -1) {
+        // Produsul există → îl scoatem
+        favItems.splice(existingIndex, 1);
+        heart.classList.remove('favorite');
+    } else {
+        // Produsul nu există → îl adăugăm
+        favItems.push({ title, price });
+        heart.classList.add('favorite');
+    }
+
+
+    favItems.forEach((item, index) => {
+        console.log(item.title);
+    })
+}
+*/
+/*
+// Atașăm click pe inimioare
+document.querySelectorAll('.heart').forEach(el => {
+  el.addEventListener('click', toggleFavorite);
+});
+
+function toggleFavorite(event) {
+  const card = event.target.closest('.card');
+  const heart = card.querySelector('.heart');
+  const title = card.querySelector('.title').textContent;
+  const price = parseFloat(card.querySelector('.price').textContent);
+
+  // Luăm lista din localStorage
+  let favItems = JSON.parse(localStorage.getItem('favItems')) || [];
+
+  // Verificăm dacă produsul există deja
+  const existingIndex = favItems.findIndex(item => item.title === title);
+
+  if (existingIndex !== -1) {
+    // Există → îl scoatem din favorite
+    favItems.splice(existingIndex, 1);
+    heart.classList.remove('favorite'); // scoatem clasa vizual
+  } else {
+    // Nu există → îl adăugăm
+    favItems.push({ title, price });
+    heart.classList.add('favorite'); // adăugăm clasa vizual
+  }
+
+  // Salvăm lista actualizată
+  localStorage.setItem('favItems', JSON.stringify(favItems));
+}
+
+// La încărcarea paginii, sincronizăm inimioarele vizual cu localStorage
+function loadFavorites() {
+  const favItems = JSON.parse(localStorage.getItem('favItems')) || [];
+  const favTitles = favItems.map(item => item.title);
+
+  document.querySelectorAll('.card').forEach(card => {
+    const heart = card.querySelector('.heart');
+    const title = card.querySelector('.title').textContent;
+
+    if (favTitles.includes(title)) {
+      heart.classList.add('favorite');
+    } else {
+      heart.classList.remove('favorite');
+    }
+  });
+}
+
+// Apelează la load
+document.addEventListener('DOMContentLoaded', loadFavorites);
+*/
+///////////////////
+function loadCartItems() {
 
     const containerCart = document.getElementById('prod-content');
     containerCart.innerHTML = '';
@@ -32,10 +132,10 @@ function loadCartItems(){
     let total = 0;
 
     cartItems.forEach((item, index) => {
-        
-    const totalPrice = item.price * item.quantity;
-    total += totalPrice;
-    const cartItemsHTML = `
+
+        const totalPrice = item.price * item.quantity;
+        total += totalPrice;
+        const cartItemsHTML = `
                 <div class="prod" data-index="${index}">
                     <div class="title-cart">${item.title}<pre>  </pre>${item.price} lei X${item.quantity}</div>
                     <button class="decrease">&lt;</button>
@@ -44,7 +144,7 @@ function loadCartItems(){
                     <button class="remove">Remove</button>
                 </div>
     `;
-    containerCart.insertAdjacentHTML('beforeend', cartItemsHTML);
+        containerCart.insertAdjacentHTML('beforeend', cartItemsHTML);
     });
 
     const totalAmountElement = document.getElementById('pric');
@@ -66,22 +166,22 @@ function loadCartItems(){
     })
 }
 
-function decreaseQuantity(event){
+function decreaseQuantity(event) {
     const itemElement = event.target.closest('.prod');
     const index = parseInt(itemElement.getAttribute('data-index'));
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-    if(cartItems[index].quantity > 1) {
+    if (cartItems[index].quantity > 1) {
         cartItems[index].quantity -= 1;
     }
-    else{
+    else {
         cartItems.splice(index, 1);
     }
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     loadCartItems()
 }
 
-function increaseQuantity(event){
+function increaseQuantity(event) {
     const itemElement = event.target.closest('.prod');
     const index = parseInt(itemElement.getAttribute('data-index'));
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -91,7 +191,7 @@ function increaseQuantity(event){
     loadCartItems();
 }
 
-function removeQuantity(event){
+function removeQuantity(event) {
     const itemElement = event.target.closest('.prod');
     const index = parseInt(itemElement.getAttribute('data-index'));
     let cartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -105,9 +205,6 @@ window.addEventListener('load', () => {
     loadCartItems();
 })
 
-document.querySelectorAll('.buy-prod').forEach(button => {
-    button.addEventListener('click', addItemCart);
-})
 
 /*
     function addItemCart(event) {

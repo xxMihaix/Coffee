@@ -5,22 +5,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartContainer = document.getElementById('cart-container');
     const map = document.getElementById('vezi-map');
     const closecart = document.getElementById('exit-cart');
+    const closefav = document.getElementById('exit-fav');
+    const openfav = document.getElementById('openFav');
+    const favmenu = document.getElementById('fav-container');
 
-    // ✅ Deschidere meniu
-    document.getElementById('open-menu1').addEventListener('click', function () {
-        console.log('menu1');
-        menu.classList.toggle('active');
-        // 🔒 Închide coșul dacă e deschis
-        cartContainer.classList.remove('active');
-    });
+    openfav.addEventListener('click', function(){
+        favmenu.classList.toggle('active');
+        menu.classList.remove('active');
+    })
 
-    document.getElementById('open-menu2').addEventListener('click', function () {
-        console.log('menu1');
-        menu.classList.toggle('active');
+    const openMenu = [
+        document.getElementById('open-menu1'),
+        document.getElementById('open-menu2')
+    ]
 
-        // 🔒 Închide coșul dacă e deschis
-        cartContainer.classList.remove('active');
-    });
+    openMenu.forEach(el => {
+        el.addEventListener('click', function(){
+            menu.classList.toggle('active');
+            cartContainer.classList.remove('active');
+            favmenu.classList.remove('active');
+        })
+    })
 
     document.addEventListener('click', (e) => {
   const menu = document.getElementById('mobile-menu');
@@ -47,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 🔒 Închide meniul dacă e deschis
             menu.classList.remove('active');
+            favmenu.classList.remove('active');
         });
     });
 
@@ -118,7 +124,7 @@ contact.forEach(el=>{
 ///////////////////////////
 
 const fundalItems = document.querySelectorAll('body, .header-container, .video, .title-despre-noi, .immg, .spec, .soft, .soft-text, .item, .magazin-online, .princ, .type-categories, .princ, .email-container, .email-container form label, .real-email-text, label, .contacteaza-ne');
-const darkItems = document.querySelectorAll('body, .navbar, .rightBtn, .cart-container, .cart-title-container, .footer-div, .submit, .mesaj, .contact-name, .contact-email, .card, .leftBtn, .navbar-mobile, .btn-soft, .vezi-map, .par, .header-container, .mobile-menu, #produse3, .video, #contact3, #switch1, #switch2, .list, .header-container, .title-despre-noi, .immg, .spec, .soft, .soft-text, .item, .magazin-online, .princ, .type-categories, .princ, .email-container, .email-container form label, .real-email-text, label, .contacteaza-ne')
+const darkItems = document.querySelectorAll('body, .fav-container, .fav-title-container, .navbar, .rightBtn, .cart-container, .cart-title-container, .footer-div, .submit, .mesaj, .contact-name, .contact-email, .card, .leftBtn, .navbar-mobile, .btn-soft, .vezi-map, .par, .header-container, .mobile-menu, #produse3, .video, #contact3, #switch1, #switch2, .list, .header-container, .title-despre-noi, .immg, .spec, .soft, .soft-text, .item, .magazin-online, .princ, .type-categories, .princ, .email-container, .email-container form label, .real-email-text, label, .contacteaza-ne')
 
 const fundal = document.getElementById('img-switch');
 const dark = document.getElementById('dark-switch');
